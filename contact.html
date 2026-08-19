@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Me | Get In Touch</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media-queries.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Area -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><i class="fa-solid fa-code me-2"></i>Portfolio</a
+        >
+        <div class="collapse navbar-collapse" id="portfolioNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!-- Communication Hub Row Segment Grid -->
+      <section
+        class="hero position-relative overflow-hidden fade-up-init"
+        style="margin: 80px"
+      >
+        <div class="container py-5 mt-5">
+          <div class="row g-5 align-items-center">
+            <!-- Left Info Panel Layer -->
+            <div class="col-lg-5">
+              <span class="hero-tagline mb-3">Get In Touch</span>
+              <h1 class="fw-bold tracking-tight mb-2">Let's Connect</h1>
+              <h2 class="h4 mb-4 fw-semibold">Drop a Message</h2>
+              <p class="hero-desc mb-4 fs-6">
+                Have an upcoming application, modern website redesign layout, or
+                training deployment need? Feel free to drop a message!
+              </p>
+
+              <!-- Social circles wrapper using premium brand styles provided -->
+              <div class="social d-flex gap-3 mb-4">
+                <a href="#" class="linkedin" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="github" target="_blank" rel="noreferrer"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </div>
+
+              <!-- Mini Contact Details Component -->
+              <div
+                class="card border-0 bg-white p-4 shadow-sm rounded-4 position-relative overflow-hidden"
+              >
+                <div class="custom-css-dots"></div>
+                <!-- CSS Vector Dot Decoration Overlay -->
+
+                <div
+                  class="d-flex align-items-center mb-3 position-relative z-3"
+                >
+                  <i class="fa-solid fa-envelope fs-5 text-primary me-3"></i>
+                  <div>
+                    <span
+                      class="text-muted d-block small text-uppercase fw-semibold tracking-wider"
+                      >Email address</span
+                    >
+                    <strong id="contact-email" class="text-dark"
+                      >hello@domain.com</strong
+                    >
+                  </div>
+                </div>
+                <div
+                  class="d-flex align-items-center mb-3 position-relative z-3"
+                >
+                  <i class="fa-solid fa-phone fs-5 text-success me-3"></i>
+                  <div>
+                    <span
+                      class="text-muted d-block small text-uppercase fw-semibold tracking-wider"
+                      >Direct Phone</span
+                    >
+                    <strong id="contact-phone" class="text-dark"
+                      >+1 (555) 000-0000</strong
+                    >
+                  </div>
+                </div>
+                <div class="d-flex align-items-center position-relative z-3">
+                  <i class="fa-solid fa-location-dot fs-5 text-danger me-3"></i>
+                  <div>
+                    <span
+                      class="text-muted d-block small text-uppercase fw-semibold tracking-wider"
+                      >Current Location</span
+                    >
+                    <strong id="contact-location" class="text-dark"></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <!-- Applied Mac OS style Terminal Code Window wrappers onto form wrapper -->
+              <div class="code-window shadow-lg">
+                <div
+                  class="code-window-header p-3 d-flex align-items-center justify-content-between"
+                >
+                  <div class="window-dots">
+                    <span class="dot dot-close"></span>
+                    <span class="dot dot-minimize"></span>
+                    <span class="dot dot-expand"></span>
+                  </div>
+                  <span class="text-white-50 small font-monospace"
+                    >secure_message_terminal.sh</span
+                  >
+                </div>
+                <div class="code-window-body p-4 p-md-5 bg-white">
+                  <div id="form-feedback-alert"></div>
+
+                  <!-- needs-validation class and novalidate attribute -->
+                  <form
+                    id="portfolioContactForm"
+                    class="text-dark needs-validation"
+                    novalidate
+                  >
+                    <div class="mb-3">
+                      <label class="form-label small fw-bold text-secondary"
+                        >Full Name <span class="editor-cursor"></span
+                      ></label>
+                      <input
+                        type="text"
+                        id="clientName"
+                        class="form-control bg-light border-0 py-2.5 px-3 rounded-3 text-dark"
+                        placeholder="Your Name"
+                        required
+                      />
+                      <div class="invalid-feedback text-start small">
+                        Please enter your full name.
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label small fw-bold text-secondary"
+                        >Email Address</label
+                      >
+                      <input
+                        type="email"
+                        id="clientEmail"
+                        class="form-control bg-light border-0 py-2.5 px-3 rounded-3 text-dark"
+                        placeholder="name@domain.com"
+                        required
+                      />
+                      <div class="invalid-feedback text-start small">
+                        Please provide a valid email address.
+                      </div>
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label small fw-bold text-secondary"
+                        >Message Content</label
+                      >
+                      <textarea
+                        id="clientMessage"
+                        rows="4"
+                        class="form-control bg-light border-0 py-2.5 px-3 rounded-3 text-dark"
+                        placeholder="Type your project requirements here..."
+                        required
+                      ></textarea>
+                      <div class="invalid-feedback text-start small">
+                        Please type a brief project message requirement.
+                      </div>
+                    </div>
+
+                    <!-- Centered button using an explicit Bootstrap structure row grid -->
+                    <div class="row justify-content-center">
+                      <div class="col-10 col-md-8 text-center">
+                        <button
+                          type="submit"
+                          class="btn-primary-custom w-100 shadow mx-auto"
+                        >
+                          <span>Send Message</span>
+                          <i class="fa-solid fa-paper-plane ms-2 small"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrated bottom structural vector geometric wave -->
+        <div class="hero-wave">
+          <svg
+            viewBox="0 0 1440 105"
+            fill="none"
+            xmlns="http://w3.org"
+            preserveAspectRatio="none"
+            style="width: 100%; height: 100%"
+          >
+            <path
+              d="M0 40C240 110 480 110 720 40C960 -30 1200 -30 1440 40V105H0V40Z"
+            />
+          </svg>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="site-footer py-5 my-4">
+      <div class="container text-center">
+        <!-- Main Navigation Links -->
+        <ul class="nav justify-content-center border-bottom pb-4 mb-4">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link px-3 text-body-secondary"
+              >Home</a
+            >
+          </li>
+
+          <!-- About Dropdown/Submenu Group -->
+          <li class="nav-item nav-group">
+            <a href="about.html" class="nav-link px-3 text-body-secondary"
+              >About</a
+            >
+            <ul class="submenu">
+              <li>
+                <a href="about.html#education" class="text-body-tertiary"
+                  >Education</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Projects Dropdown/Submenu Group -->
+          <li class="nav-item nav-group">
+            <a href="projects.html" class="nav-link px-3 text-body-secondary"
+              >Projects</a
+            >
+            <ul class="submenu">
+              <li>
+                <a href="projects.html#competencies" class="text-body-tertiary"
+                  >Competencies</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Bottom Section: Copyright & Go to Top -->
+        <div
+          class="footer-bottom d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2"
+        >
+          <p class="text-body-secondary mb-0">
+            All Rights Reserved &copy; 2026
+          </p>
+          <div class="back-to-top-wrapper">
+            <a href="#" class="btn-to-top text-decoration-none">
+              Go to Top <span class="arrow">↑</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/data.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

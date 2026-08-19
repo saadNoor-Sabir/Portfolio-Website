@@ -1,0 +1,46 @@
+/* Responsiveness */
+@media (max-width: 991.98px) {
+  .hero {
+    padding: 120px 0 180px;
+    text-align: center !important;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .hero-wave {
+    height: 100px;
+  }
+  .nav-link::after {
+    display: none;
+  }
+  .navbar {
+    background-color: var(--light-color);
+  }
+  #view-my-proj {
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-primary-custom {
+    font-size: 1.125rem;
+    min-width: 196px;
+  }
+}
+
+/* Mobile responsive scaling fixes */
+@media (max-width: 575.98px) {
+  .code-window-body {
+    font-size: 0.75rem !important; /* Scale code letters down proportionally on tight screens */
+    padding: 1.25rem !important;
+  }
+  .custom-css-dots {
+    width: 110px;
+    height: 110px;
+    bottom: -10px;
+    right: -10px;
+  }
+}

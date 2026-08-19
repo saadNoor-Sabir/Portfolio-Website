@@ -1,0 +1,473 @@
+:root {
+  --primary-color: #1a5c85;
+  --secondary-color: #1b7343;
+  --accent-color: #ff7b00;
+  --dark-color: #0f172a;
+  --light-color: #f8fafc;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+  --bg-light: #f8fafc;
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --gradient: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navbar */
+.navbar {
+  padding: 1rem 0;
+  transition: var(--transition);
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+  padding: 0.6rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  color: var(--primary-color) !important;
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0 1rem;
+  position: relative;
+  color: var(--text-dark) !important;
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--gradient);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.hero {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(27, 115, 67, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(26, 92, 133, 0.08),
+      transparent 40%
+    ),
+    var(--bg-light);
+  color: var(--text-dark);
+  padding: 10dvh 0 12dvh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative; /* Pins the wave to this container */
+  z-index: 1;
+}
+.hero .container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Wave Styling */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+  z-index: 2;
+  pointer-events: none; /* Prevents the wave from blocking button clicks */
+}
+
+/* SVG path color blend perfectly with whatever section is next */
+.hero-wave path {
+  fill: #f8fafc;
+}
+
+.hero-tagline {
+  background: rgba(26, 92, 133, 0.1);
+  color: var(--primary-color);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Unique brand color variables */
+.social a.linkedin {
+  --brand-color: #0077b5;
+}
+.social a.github {
+  --brand-color: #24292e;
+}
+
+/* Base Circle Styling */
+.social a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  font-size: 1.4rem;
+  color: #1e2b37; /* Default icon color */
+  border: 2px solid #e2e8f0; /* Soft gray initial border */
+  border-radius: 50%;
+  overflow: hidden; /* Keeps the filling background clipped inside */
+  z-index: 1;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.2s ease;
+}
+
+/* Icon Layering */
+.social a i {
+  position: relative;
+  z-index: 3; /* Keeps icon safely above the rising color fill */
+  transition: transform 0.35s ease;
+}
+
+/* The Color Fill Block (Sitting below the visible container) */
+.social a::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--brand-color);
+  border-radius: 50%; /* Keeps it matching the container shape */
+  transform: translateY(105%); /* Positioned completely underneath the button */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+/* Hover States */
+.social a:hover {
+  color: #ffffff; /* Flips icon text to white */
+  border-color: var(--brand-color); /* Changes outer ring to brand color */
+  transform: translateY(-3px); /* Quick subtle lifting dynamic */
+}
+
+/* Rises up into view instantly on hover */
+.social a:hover::after {
+  transform: translateY(0); /* Slides the vertical block to fill 100% */
+}
+
+.hero-desc {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.hero-desc b {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+/* Premium Button */
+.btn-primary-custom {
+  align-items: center;
+  background-image: linear-gradient(144deg, #1a5c85, #1b7343 50%, #01dc34);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 1.25rem !important;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 75%;
+  min-width: 140px !important;
+  padding: 1.125rem 1.5rem;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn-primary-custom:active,
+.btn-primary-custom:hover {
+  outline: 0 !important;
+}
+
+/* About Me */
+#decorative-dots {
+  max-width: 500px;
+  padding: 0 15px 15px 0;
+}
+
+.custom-css-dots {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 160px;
+  height: 160px;
+  z-index: 1;
+  opacity: 0.35;
+  pointer-events: none;
+  /* Mathematically renders clean vector dots straight in browser cache */
+  background-image: radial-gradient(var(--primary-color) 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
+/* --- Designing Window --- */
+.code-window {
+  background-color: #0b1329; /* Dark slate palette background */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease;
+}
+
+/* Micro-interaction: Subtle depth shift on cursor hover */
+.code-window:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(11, 19, 41, 0.3) !important;
+}
+
+/* Mac OS Style window header */
+.code-window-header {
+  background-color: #111a36;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.window-dots .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+.dot-close {
+  background-color: #ff5f56;
+}
+.dot-minimize {
+  background-color: #ffbd2e;
+}
+.dot-expand {
+  background-color: #27c93f;
+}
+/* Code Content Custom Token Highlighting */
+.code-window-body {
+  color: #a5b4fc; /* Fallback light blue/gray code text */
+  line-height: 1.6;
+  text-align: left !important;
+}
+.token-keyword {
+  color: #f43f5e;
+  font-weight: 600;
+} /* Structural elements */
+.token-property {
+  color: #fbbf24;
+} /* JSON properties */
+.token-string {
+  color: #34d399;
+} /* User values */
+.token-bool {
+  color: #38bdf8;
+  font-weight: 600;
+} /* Booleans */
+
+/* Blinking Editor Insertion Terminal Cursor */
+.editor-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 17px;
+  background-color: #fbbf24;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: terminal-blink 1s steps(2, start) infinite;
+}
+
+@keyframes terminal-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+/* Animated Profile Image Container */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  position: relative;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+  max-height: auto;
+  max-width: 85%;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.fade-up-init {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dynamic Cursor Typing Effect */
+.typing-cursor::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+  color: var(--primary-color);
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* footer style */
+/* .site-footer {
+  border-top: 1px solid var(--bs-border-color-translucent);
+} */
+
+/* Base Link Reset & Smooth Transitions */
+.site-footer .nav-link {
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+.site-footer .nav-link:hover {
+  color: var(--bs-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Inline Nested Submenus */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.site-footer .submenu {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 4px 0 0 0 !important;
+  text-align: center;
+}
+.site-footer .submenu a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+.site-footer .submenu a:hover {
+  color: var(--bs-link-hover-color) !important;
+}
+
+/* "Go To Top" Button */
+.btn-to-top {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--bs-body-color);
+  padding: 6px 14px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 20px;
+  background-color: var(--bs-body-bg);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-to-top:hover {
+  background-color: var(--bs-secondary-bg);
+  border-color: var(--bs-secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.btn-to-top .arrow {
+  transition: transform 0.3s ease;
+}
+.btn-to-top:hover .arrow {
+  transform: translateY(-3px);
+}
