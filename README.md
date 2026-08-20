@@ -38,5 +38,5 @@ This project runs entirely in the browser. To use the application:
 1. Open the app in your browser (or launch via VS Code Live Server).
 2. [Browse the projects card and see the projects i created before."]
 
-Your Name - [@your_twitter](https://twitter.com) - email@example.com
-Project Link: [https://github.com](https://github.com)
+Saad Noor - saadnoorm.sabir@example.com
+Project Link: []
