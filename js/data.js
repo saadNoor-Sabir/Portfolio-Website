@@ -56,8 +56,8 @@ const projectsData = [
     ],
     technologies: ["HTML5", "CSS3", "JavaScript", "Jquery"],
     image: "assets/images/donation-page-image.png",
-    githubLink: "https://github.com",
-    liveDemo: "https://vercel.com",
+    githubLink: "#",
+    liveDemo: "#",
   },
   {
     id: 2,
@@ -80,7 +80,8 @@ const projectsData = [
       "Jquery",
     ],
     image: "assets/images/unit-converter-image.png",
-    githubLink: "https://github.com",
-    liveDemo: "https://vercel.com",
+    githubLink:
+      "https://github.com/saadNoor-Sabir/Advance-JavaScript-project.git",
+    liveDemo: "#",
   },
 ];
